@@ -1,0 +1,14 @@
+---
+- name: Create and remove a file in /tmp
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create a file in /tmp
+      file:
+        path: /tmp/example_file.txt
+        state: touch
+
+    - name: Remove the file from /tmp
+      file:
+        path: /tmp/example_file.txt
+        state: absent
